@@ -51,10 +51,10 @@ export default function ReportTab({ lang, t }) {
   const monthEarn = Number(earnings?.month?.net_profit) || 0;
 
   return (
-    <section className="tab-view block space-y-5">
-      <div className="bg-white p-5 rounded-xl border border-[#E7E5E4] shadow-sm">
+    <section className="tab-view block space-y-3 sm:space-y-5">
+      <div className="bg-white p-3 sm:p-5 rounded-2xl border border-[#E7E5E4] shadow-xs">
         {/* Header & Date Picker */}
-        <div className="flex flex-wrap justify-between items-center gap-3 border-b border-[#E7E5E4] pb-3 mb-4">
+        <div className="flex flex-wrap justify-between items-center gap-2 sm:gap-3 border-b border-[#E7E5E4] pb-3 mb-3 sm:mb-4">
           <div>
             <h2 className="font-extrabold text-[#1C1917] text-base">{t.report_title}</h2>
             <p className="text-xs text-[#78716C]">{t.report_sub}</p>

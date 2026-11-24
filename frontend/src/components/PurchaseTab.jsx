@@ -154,10 +154,10 @@ export default function PurchaseTab({ onOpenPriceModal, t }) {
   };
 
   return (
-    <section className="tab-view block space-y-6">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <section className="tab-view block space-y-3 sm:space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6">
         {/* Entry Form (5 Cols) */}
-        <div className="lg:col-span-5 bg-white p-5 rounded-xl border border-[#E7E5E4] shadow-sm space-y-4">
+        <div className="lg:col-span-5 bg-white p-3 sm:p-5 rounded-2xl border border-[#E7E5E4] shadow-xs space-y-3 sm:space-y-4">
           <div className="border-b border-[#E7E5E4] pb-3">
             <h2 className="font-extrabold text-[#1C1917] text-base">{t.stockin_title}</h2>
             <p className="text-xs text-[#78716C]">{t.stockin_sub}</p>
@@ -272,7 +272,7 @@ export default function PurchaseTab({ onOpenPriceModal, t }) {
         </div>
 
         {/* Inventory List (7 Cols) */}
-        <div className="lg:col-span-7 bg-white p-5 rounded-xl border border-[#E7E5E4] shadow-sm space-y-4">
+        <div className="lg:col-span-7 bg-white p-3 sm:p-5 rounded-2xl border border-[#E7E5E4] shadow-xs space-y-3 sm:space-y-4">
           <div className="flex justify-between items-center border-b border-[#E7E5E4] pb-3">
             <div>
               <h2 className="font-extrabold text-[#1C1917] text-base">{t.inv_title}</h2>

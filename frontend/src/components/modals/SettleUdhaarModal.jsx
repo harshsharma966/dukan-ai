@@ -50,8 +50,8 @@ export default function SettleUdhaarModal({ isOpen, onClose, customer, onSettled
   const dueVal = Number(customer.due !== undefined ? customer.due : customer.current_due) || 0;
 
   return (
-    <div className="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-sm w-full p-5 space-y-4 shadow-2xl border border-[#E7E5E4]">
+    <div className="fixed inset-0 bg-stone-900/40 backdrop-blur-sm z-50 flex items-center justify-center p-2.5 sm:p-4">
+      <div className="bg-white rounded-2xl max-w-sm w-full p-4 sm:p-5 space-y-3 sm:space-y-4 shadow-2xl border border-[#E7E5E4] max-h-[94vh] overflow-y-auto">
         <h3 className="font-bold text-[#1C1917] text-base">{t.modal_settle_title}</h3>
         <div className="bg-[#FAFAF7] p-3 rounded-lg border border-[#E7E5E4] text-xs space-y-1">
           <div className="flex justify-between">

@@ -352,12 +352,12 @@ export default function BillingTab({
   };
 
   return (
-    <section className="tab-view block">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <section className="tab-view block space-y-3">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-6">
         {/* LEFT: PRODUCT SELECTION (7 Cols) */}
-        <div className="lg:col-span-7 space-y-4">
+        <div className="lg:col-span-7 space-y-3">
           {/* Search Bar */}
-          <div className="bg-white p-3 rounded-xl border border-[#E7E5E4] shadow-sm flex items-center gap-3">
+          <div className="bg-white p-2.5 sm:p-3 rounded-xl border border-[#E7E5E4] shadow-xs flex items-center gap-2 sm:gap-3">
             <i className="fa-solid fa-magnifying-glass text-[#78716C]"></i>
             <input
               type="text"
@@ -518,7 +518,7 @@ export default function BillingTab({
         </div>
 
         {/* RIGHT: CART & CHECKOUT (5 Cols) */}
-        <div className="lg:col-span-5 bg-white p-4 rounded-xl border border-[#E7E5E4] shadow-sm flex flex-col justify-between">
+        <div className="lg:col-span-5 bg-white p-3 sm:p-4 rounded-xl border border-[#E7E5E4] shadow-xs flex flex-col justify-between">
           <div>
             {/* Customer Bar */}
             <div className="bg-[#FAFAF7] p-3 rounded-lg border border-[#E7E5E4] mb-4">
@@ -745,11 +745,11 @@ export default function BillingTab({
                             ₹{Number(it.selling_price).toFixed(1)} / {it.unit}
                           </p>
                         </div>
-                        <div className="flex items-center gap-1 mr-2">
+                        <div className="flex items-center gap-1.5 mr-2">
                           <button
                             type="button"
                             onClick={() => updateCartQty(idx, -1)}
-                            className="w-6 h-6 rounded bg-white border border-[#E7E5E4] font-bold text-[#1C1917] hover:bg-[#FEF3C7] flex items-center justify-center transition shadow-xs"
+                            className="w-8 h-8 sm:w-6 sm:h-6 rounded-lg bg-white border border-[#E7E5E4] font-bold text-sm sm:text-xs text-[#1C1917] hover:bg-[#FEF3C7] active:scale-95 flex items-center justify-center transition shadow-xs"
                           >
                             -
                           </button>
@@ -760,12 +760,12 @@ export default function BillingTab({
                             value={it.quantity}
                             onFocus={(e) => e.target.select()}
                             onChange={(e) => setCartQty(idx, parseFloat(e.target.value) || 0)}
-                            className="w-16 text-center text-xs py-1 px-1 rounded-lg border border-[#E7E5E4] bg-white font-extrabold text-[#1C1917] focus:outline-none focus:ring-2 focus:ring-[#15803D] focus:border-[#15803D] shadow-xs"
+                            className="w-16 sm:w-16 text-center text-xs py-1.5 sm:py-1 px-1 rounded-lg border border-[#E7E5E4] bg-white font-extrabold text-[#1C1917] focus:outline-none focus:ring-2 focus:ring-[#15803D] focus:border-[#15803D] shadow-xs"
                           />
                           <button
                             type="button"
                             onClick={() => updateCartQty(idx, 1)}
-                            className="w-6 h-6 rounded bg-white border border-[#E7E5E4] font-bold text-[#1C1917] hover:bg-[#FEF3C7] flex items-center justify-center transition shadow-xs"
+                            className="w-8 h-8 sm:w-6 sm:h-6 rounded-lg bg-white border border-[#E7E5E4] font-bold text-sm sm:text-xs text-[#1C1917] hover:bg-[#FEF3C7] active:scale-95 flex items-center justify-center transition shadow-xs"
                           >
                             +
                           </button>
@@ -823,7 +823,7 @@ export default function BillingTab({
               <span className="text-xs font-bold text-[#78716C] block mb-1">
                 {t.payment_mode_title}
               </span>
-              <div className="grid grid-cols-4 gap-1.5 text-xs">
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-1.5 text-xs">
                 {['CASH', 'UPI', 'UDHAAR', 'PARTIAL'].map((mode) => (
                   <button
                     key={mode}

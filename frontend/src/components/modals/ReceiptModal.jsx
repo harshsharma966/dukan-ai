@@ -33,8 +33,8 @@ export default function ReceiptModal({ isOpen, onClose, bill, lang, t, currentSh
   };
 
   return (
-    <div id="modal-receipt" className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-md w-full p-6 space-y-4 shadow-2xl border border-[#E7E5E4]">
+    <div id="modal-receipt" className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-2.5 sm:p-4">
+      <div className="bg-white rounded-2xl max-w-md w-full p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-2xl border border-[#E7E5E4] max-h-[94vh] overflow-y-auto">
         <div className="text-center border-b border-[#E7E5E4] pb-3 space-y-1">
           <h3 className="font-extrabold text-base text-[#1C1917]">{bill.shop_name || currentShop?.shop_name || t.rcpt_shop_title}</h3>
           {(bill.shop_address || currentShop?.address) && <p className="text-[11px] text-[#78716C]">{bill.shop_address || currentShop?.address}</p>}

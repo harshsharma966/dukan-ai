@@ -115,8 +115,8 @@ export default function StaffModal({ isOpen, onClose, lang, t, currentShop }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-lg w-full p-6 space-y-4 shadow-2xl border border-[#E7E5E4] max-h-[90vh] flex flex-col justify-between">
+    <div className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-2.5 sm:p-4">
+      <div className="bg-white rounded-2xl max-w-lg w-full p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-2xl border border-[#E7E5E4] max-h-[94vh] flex flex-col justify-between">
         
         {/* Header */}
         <div className="flex justify-between items-start border-b border-[#E7E5E4] pb-3">

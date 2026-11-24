@@ -238,8 +238,8 @@ export default function AuthPage({ onLoginSuccess, lang, onToggleLang, t }) {
       </header>
 
       {/* Main Login / Register Card Container */}
-      <main className="max-w-md w-full mx-auto px-4 py-6">
-        <div className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-stone-200/80">
+      <main className="max-w-md w-full mx-auto px-2.5 sm:px-4 py-3 sm:py-6">
+        <div className="bg-white rounded-3xl p-4 sm:p-8 shadow-xl border border-stone-200/80">
           
           {/* Header Branding */}
           <div className="text-center mb-6">

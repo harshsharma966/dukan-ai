@@ -223,7 +223,7 @@ export default function App() {
       />
 
       {/* Main View Container */}
-      <main className="max-w-7xl mx-auto w-full p-4 flex-1">
+      <main className="max-w-7xl mx-auto w-full p-2 sm:p-4 flex-1">
         {activeTab === 'billing' && (
           <BillingTab
             key={`billing-${shopVersion}`}

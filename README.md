@@ -1,86 +1,88 @@
-# 🏪 किराना दुकान AI (Dukan AI) - Multi-Tenant Cloud POS & ERP
+# 🏪 Kirana Dukan AI (Smart POS & Multi-Tenant Store ERP)
 
-एक आधुनिक, सुरक्षित और तेज़ **Point of Sale (POS), इन्वेंटरी और उधारी खाता प्रबंधन सिस्टम**, जो विशेष रूप से भारतीय किराना दुकानों, जनरल स्टोर्स और रिटेल शॉप्स के लिए तैयार किया गया है।
+A modern, cloud-ready, and lightweight **Point of Sale (POS), Inventory, and Udhaar Khata (Customer Credit Ledger)** management system tailored for Indian Kirana stores, grocery shops, and retail businesses.
 
-अब यह सिस्टम पूरी तरह से **React (Vite) + Tailwind CSS Frontend**, **FastAPI Backend**, और **100% PostgreSQL Database** पर चलता है, जिसमें **Multi-Tenant (अलग-अलग दुकानें)** और **Role-Based Access (मालिक vs बिल बॉय)** शामिल हैं।
+Built with **React 18 (Vite) + Tailwind CSS** on the frontend, **FastAPI (Python)** on the backend, and **100% PostgreSQL** for database persistence with **Multi-Tenant Shop Isolation** and **Role-Based Access Control (Owner vs Cashier)**.
 
 ---
 
-## ✨ Features (मुख्य विशेषताएं)
+## ✨ Key Features
 
-### 1. 🔐 Multi-Tenant & Role-Based Access (मालिक व कर्मचारी सुरक्षा)
-- **Multi-Shop SaaS:** एक ही सिस्टम में कई दुकानें अलग-अलग रजिस्टर हो सकती हैं। हर दुकान का डेटा (प्रोडक्ट्स, ग्राहक, बिल, कमाई) पूरी तरह अलग और सुरक्षित रहता है।
-- **मालिक (Owner) vs बिल बॉय (Cashier):**
-  - **मालिक:** पूरा नियंत्रण (स्टॉक खरीदना, सामान हटाना, उधारी खाता, दैनिक क्लोजिंग रिपोर्ट, बिल रद्द करना, और कर्मचारी जोड़ना)।
-  - **बिल बॉय (Cashier):** सिर्फ बिलिंग काउंटर और बिल इतिहास देख सकता है। स्टॉक जोड़ना/हटाना, उधारी खाता और शाम की मुनाफे की रिपोर्ट छुप जाती है।
-  - **कर्मचारी प्रबंधन:** मालिक 1-क्लिक में नए बिल बॉय जोड़ सकता है और उनका 4-अंकों का लॉगिन PIN तय कर सकता है।
+### 1. 🔐 Multi-Tenant Architecture & Role-Based Access (Dukan Malik vs Cashier)
+- **Multi-Shop SaaS Isolation:** Multiple stores can register independently. Each shop's data (products, customers, bills, stock, earnings) remains strictly isolated and secure.
+- **Owner (दुकान मालिक) vs Cashier (बिल बॉय):**
+  - **Owner:** Full access — stock-in (Purchase), delete product, udhaar ledger, daily closing profit reports, cancel bills, and staff management.
+  - **Cashier (Bill Boy):** Restricted access — can only access the **Billing Counter (Sell)** and view **Bill History** (reprint slip, share WhatsApp). Purchase, Khata, and Reports are hidden.
+  - **Staff Management:** Store owners can add/remove cashiers and set a 4-digit login PIN with 1 click.
 
-### 2. ⚡ Fast POS Billing Counter (बिक्री काउंटर)
-- **त्वरित बिलिंग:** वॉक-इन (नकद) या नामजद ग्राहक के साथ बिल बनाएं।
-- **वज़न व यूनिट्स:** पैकेट, किलो (kg), ग्राम (gm), लीटर में सटीक कैलकुलेशन।
-- **मल्टी-मोड भुगतान:** Cash, UPI, उधार (Credit), और Partial (आधा नकद, आधा उधार)।
-- **छुट्टे पैसे का हिसाब:** गल्ले से ग्राहक को कितने पैसे वापस करने हैं, स्क्रीन पर दिखाता है।
-- **व्हाट्सएप और प्रिंट रसीद:** 1-क्लिक में थर्मल प्रिंटर रसीद निकालें या सीधे ग्राहक के WhatsApp पर बिल भेजें।
+### 2. ⚡ Fast POS Billing Counter
+- **Walk-in & Customer Billing:** Quick cash sales without mandatory customer details, or tag regular customers.
+- **Weights & Loose Unit Conversions:** Real-time billing for packets, kg, grams, and liters with quick shortcut chips (e.g., 250g, 500g, 1kg).
+- **Multi-Mode Payments:** Cash, UPI, Udhaar (Full Credit), and Partial Payment (half cash, half credit).
+- **Change Calculator:** Auto-calculates cash change (छुट्टे पैसे) to return to the customer.
+- **Instant WhatsApp & Print Receipts:** 1-click thermal/A4 print receipts and instant WhatsApp bill sharing.
 
-### 3. 📦 Stock IN & Inventory (खरीद व लाइव इन्वेंटरी)
-- **स्टॉक इन (Purchase):** सप्लायर से आया माल स्टॉक में जोड़ें।
-- **अलर्ट लिमिट (Re-order Limit):** हर सामान की कम स्टॉक होने की लिमिट सेट करें।
-- **सामान हटाएं (Delete Product):** दुकान की इन्वेंटरी से बेकार या पुराने सामान को सुरक्षित रूप से हटाएं (इतिहास सुरक्षित रहता है)।
-- नई दुकानें रजिस्टर होने पर बिल्कुल 0 (Blank) स्टॉक से शुरू होती हैं।
+### 3. 📱 100% Mobile Responsive & Auto-Scaling
+- **Mobile-First Cards & Viewport:** Automatically scales to any screen size (mobile, tablet, desktop).
+- **Swipeable Navigation Tabs:** Smooth touch-friendly horizontal tab navigation.
+- **Card-Based Views on Mobile:** Converts wide desktop data tables in Khata and Bill History into compact mobile cards.
+- **Touch-Friendly Controls:** Enlarged buttons (`+`, `-`, payment modes) designed for effortless mobile tapping.
 
-### 4. 📒 Udhaar Khata & Payment Receipts (उधारी खाता व जमा पर्ची)
-- **ग्राहक लेजर:** हर ग्राहक का बकाया (Current Due) और मासिक लेन-देन।
-- **उधारी जमा (Settle Due):** Cash या UPI से उधारी वसूलें।
-- **समर्पित भुगतान रसीद (Payment Slip):** उधारी जमा होते ही स्क्रीन पर पक्की **जमा पर्ची** खुलती है (दुकान का नाम, जमा रकम, पिछला बकाया, अब बचा बकाया: ₹0 चुकता ✓) जिसे Print या WhatsApp किया जा सकता है।
-- **बिल इतिहास में स्टेटस:** बिल पर साफ़ दिखता है कि उधार **"चुका दिया ✓"** या **"बाकी ₹XX"** है।
+### 4. 📦 Stock IN & Inventory Management
+- **Stock In (Purchase):** Record wholesale inventory purchases with purchase cost and selling price.
+- **Customizable Low-Stock Limits:** Set re-order thresholds per product to flag fast-moving items before they run out.
+- **Safe Product Deletion:** Soft-delete products from inventory while safely preserving past sales/purchase history.
+- **Blank Store on Registration:** Newly registered stores start clean with 0 items (no unwanted dummy products).
 
-### 5. 📊 Daily Closing Report (शाम की दैनिक क्लोजिंग)
-- **गल्ले का हिसाब:** आज की कुल बिक्री, गल्ले में नकद (Cash in Drawer), बैंक में आया UPI, नया उधार और उधारी वसूली।
-- **मुनाफा (Profit & Margin):** आज की शुद्ध कमाई और मार्जिन प्रतिशत।
-- **सामान वापसी (Returns):** माल वापसी पर Cash/UPI/Due-Adjustment रिफंड।
+### 5. 📒 Udhaar Khata & Dedicated Payment Receipts (जमा पर्ची)
+- **Customer Ledger:** Real-time tracking of pending balances and month-wise credit statements.
+- **Udhaar Settle (Due Deposit):** Collect pending dues via Cash or UPI.
+- **Dedicated Payment Receipt Slip:** Automatically generates a dedicated payment receipt on settlement (Shop details, Customer details, Amount Paid, Previous Due, Current Due: ₹0 Settled ✓) with Print and WhatsApp options.
+- **Clear Status Badges in Bill History:** Bills display live status badges: `उधार (चुका दिया ✓ / Cleared)` or `उधार (बाकी / Pending: ₹XX)`.
+
+### 6. 📊 Daily Closing & Profit Reports (शाम की क्लोजिंग)
+- **Financial Day Closing:** Tracks Total Sales, Cash in Drawer (Sales Cash + Udhaar Recovered - Cash Refunds), UPI in Bank, New Credit Given, and Market Due.
+- **Profit & Margin Tracking:** Net earnings (Profit = Selling Price - Cost Price) and profit margins.
+- **Sales Returns (वापसी):** Handles item returns with Cash, UPI, or Due Adjustment refunds.
 
 ---
 
 ## 🛠️ Tech Stack
 
 - **Backend:** Python 3.10+, FastAPI, Uvicorn, psycopg2-binary, PyJWT, Python-Dotenv
-- **Database:** PostgreSQL (100% pure PostgreSQL, ACID compliant, multi-tenant relational schema)
-- **Frontend:** React 18 (Vite), Tailwind CSS, FontAwesome 6, KaTeX
-- **Language Support:** द्विभाषी (पूर्ण हिन्दी व English स्विच)
+- **Database:** PostgreSQL (100% pure PostgreSQL, ACID transactions, relational multi-tenant schema)
+- **Frontend:** React 18, Vite, Tailwind CSS, FontAwesome 6
+- **Bilingual UI:** Instant 1-click toggle between **हिन्दी (Hindi)** and **English**
 
 ---
 
-## 🚀 Getting Started (शुरू कैसे करें)
+## 🚀 Getting Started (Setup Guide)
 
-### 1. रिपॉजिटरी क्लोन करें
+### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/dukan-ai.git
-cd dukan-ai
+git clone https://github.com/harshsharma966/ai-dukhan.git
+cd ai-dukhan
 ```
 
-### 2. बैकएंड सेटअप (Python Virtual Environment)
+### 2. Backend Setup (Python Virtual Environment)
 ```bash
-# Virtual environment बनाएं और एक्टिवेट करें
+# Create and activate virtual environment
 python -m venv venv
-venv\Scripts\activate   # Windows
-# source venv/bin/activate # Linux/Mac
+venv\Scripts\activate   # On Windows
+# source venv/bin/activate # On Linux/macOS
 
-# डिपेंडेंसीज़ इंस्टॉल करें
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 3. डेटाबेस कॉन्फ़िगरेशन (.env)
-रूट डायरेक्टरी में `.env` फाइल बनाएं और अपनी PostgreSQL डिटेल्स डालें:
+### 3. Database Configuration (.env)
+Create a `.env` file in the root directory:
 ```env
-DB_HOST=localhost
-DB_PORT=5433
-DB_USER=postgres
-DB_PASSWORD=your_password
-DB_NAME=kirana_shop
-JWT_SECRET=your_jwt_secret_key
+DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5433/kirana_shop
+JWT_SECRET=your_secret_jwt_key
 ```
 
-### 4. फ्रंटएंड सेटअप (React / Vite)
+### 4. Frontend Setup (React / Vite)
 ```bash
 cd frontend
 npm install
@@ -88,11 +90,11 @@ npm run build
 cd ..
 ```
 
-### 5. सर्वर शुरू करें
+### 5. Run the Application
 ```bash
 uvicorn app:app --reload --host 127.0.0.1 --port 8000
 ```
-ब्राउज़र में खोलें:
+Open your browser and visit:
 ```
 http://127.0.0.1:8000
 ```
@@ -103,25 +105,25 @@ http://127.0.0.1:8000
 
 ```
 dukan-ai/
-├── app.py                 # FastAPI मुख्य राउट्स व सुरक्षा logic (Auth, Staff, Sales, Stock)
-├── database.py            # PostgreSQL कनेक्शन पूल, माइग्रेशन व क्वेरीज़
-├── schema_postgres.sql    # PostgreSQL मल्टी-टेनेंट स्कीमा (shops, staff, products, bills, khata)
-├── requirements.txt       # Python डिपेंडेंसीज़
-├── README.md              # प्रोजेक्ट डॉक्यूमेंटेशन
+├── app.py                 # FastAPI API routes, auth, role middleware & business logic
+├── database.py            # PostgreSQL connection pool, schema migrations & queries
+├── schema_postgres.sql    # Relational schema (shops, staff, products, sales_bills, customer_payments)
+├── requirements.txt       # Python dependencies
+├── README.md              # Project documentation
 ├── modules/
-│   ├── customers.py       # ग्राहक खाता व मासिक लेजर
-│   ├── purchase.py        # स्टॉक इन व खरीद प्रबंधन
-│   ├── sales.py           # POS बिलिंग, कार्ट व कैलकुलेशन
-│   ├── post_sale.py       # उधारी वसूली व भुगतान रसीद logic
-│   └── reports.py         # शाम की दैनिक क्लोजिंग रिपोर्ट व री-ऑर्डर लिस्ट
-└── frontend/              # React (Vite) आधुनिक फ्रंटएंड
+│   ├── customers.py       # Customer khata & monthly ledger statements
+│   ├── purchase.py        # Stock in & inventory procurement
+│   ├── sales.py           # POS billing & cart calculation
+│   ├── post_sale.py       # Udhaar recovery, return items & cancellation logic
+│   └── reports.py         # Daily evening closing report & profit margins
+└── frontend/              # React (Vite) Single Page Application
     ├── src/
     │   ├── components/    # BillingTab, PurchaseTab, KhataTab, HistoryTab, ReportTab, Header
     │   ├── components/modals/ # StaffModal, PaymentReceiptModal, SettleUdhaarModal, ReceiptModal
-    │   ├── App.jsx        # मुख्य स्टेट व रोल-बेस्ड एक्सेस कंट्रोल
-    │   ├── i18n.js        # हिन्दी व English अनुवाद
-    │   └── utils.js       # WhatsApp बिल व पेमेंट रसीद जनरेटर
-    └── dist/              # प्रोडक्शन बिल्ड
+    │   ├── App.jsx        # Root component, routing & role state
+    │   ├── i18n.js        # Hindi & English localization dictionary
+    │   └── utils.js       # WhatsApp bill & payment receipt generator
+    └── dist/              # Production static assets
 ```
 
 ---

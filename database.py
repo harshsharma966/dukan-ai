@@ -128,7 +128,7 @@ class Database:
 
     def _configure_engine(self):
         """Sets up PostgreSQL connection using .env configuration."""
-        db_url_env = os.getenv("DATABASE_URL", "").strip()
+        db_url_env = (os.getenv("DATABASE_URL") or os.getenv("database_url") or "").strip()
 
         if db_url_env:
             if db_url_env.startswith("postgres://"):

@@ -27,8 +27,8 @@ export default function PaymentReceiptModal({ isOpen, onClose, receipt, lang, t,
   };
 
   return (
-    <div className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl max-w-sm w-full p-6 space-y-4 shadow-2xl border border-[#E7E5E4] animate-in fade-in zoom-in-95 duration-150">
+    <div className="fixed inset-0 bg-stone-900/50 backdrop-blur-sm z-50 flex items-center justify-center p-2.5 sm:p-4">
+      <div className="bg-white rounded-2xl max-w-sm w-full p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-2xl border border-[#E7E5E4] max-h-[94vh] overflow-y-auto animate-in fade-in zoom-in-95 duration-150">
         
         {/* Shop Header */}
         <div className="text-center border-b border-[#E7E5E4] pb-3 space-y-1">
